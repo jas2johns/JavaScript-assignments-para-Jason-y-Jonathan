@@ -13,7 +13,7 @@ function displayResults()
     var hoursSlept = $("hourslept").value;
     var hoursSleptInt= parseInt(hoursSlept);
     var yearsTotal = userAgeInt * (hoursSleptInt / 24);
-    var yearsTotalR = math.round(yearsTotal);    
+    var yearsTotalR = Math.round(yearsTotal);    
     
     var myText = "Hi " + myFirstName + "." + "You have slept " + yearsTotalR + " years of your life away.";
     
