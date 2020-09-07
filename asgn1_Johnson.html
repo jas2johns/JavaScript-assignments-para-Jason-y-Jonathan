@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+	<title>Simple Web Page</title>
+	<link rel="stylesheet" href="simple.css">
+    <script src="asgn1_Johnson.js"></script>
+</head>
+
+<body>
+	<div id="container">
+		<header>
+			<h1 class="headcolor">Assignment 1</h1>
+		</header>
+
+		<main>
+            
+            <form id="myform" method="post" action="someprogram.php">
+                <p>First name:<input type="text" id="firstname" size="30"></p>
+                <p>Enter Your Age:<input type="number" id="userAge" size="30" /></p>
+                <p>Hours Slept each night:<input type="number" id="hourslept" size="30"/></p>
+                
+                
+                
+                
+                <p><input type="button" id="mybutton" value="Calculate Unconsciousness" onclick="displayResults();"></p>
+            </form>  
+            <p id="mymsg"></p>
+		</main>
+	</div>
+</body>
+</html>
