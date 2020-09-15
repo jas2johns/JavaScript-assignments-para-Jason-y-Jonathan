@@ -1,89 +1,53 @@
-var $ = function (id) 
-        {
-			return document.getElementById(id);
-		}
+var $ = function (id) {
+	return document.getElementById(id);
+}
 
-var displayMessage = function ()
-{
+var displayMessage = function () {
 	//new
 	var myFirstName = $("firstname").value;
 	var myLastName = $("lastname").value;
-	
-	if (myFirstName == '' || myLastName == '')
-	{
+
+	if (myFirstName == '' || myLastName == '') {
 		$("message").innerHTML = "Please enter both your name and password ";
+		return;
 	}
-		else
-			{
-				var myFirstName = $("firstname").value;
-				var myLastName = $("lastname").value;
-				
-				//Dates defined
-				var today = new Date();   //Today's Date
-				var todaytext = today.toDateString();
-				var todaymm  = today.getMonth() + 1;
-				var todaydd  = today.getDate();
-				var todayyyy = today.getFullYear();
-			
-			
-				//message to to be displayed
-				var myText = "Your Name is listed as " + myLastName + "," + myFirstName + 
-				" and today's date is " + todaymm + "-" + todaydd + "-" + todayyyy + ".";
-			}
+
+	var myFirstName = $("firstname").value;
+	var myLastName = $("lastname").value;
+
+	//Dates defined
+	var today = new Date();   //Today's Date	
+	var todaymm = today.getMonth() + 1;
+	var todaydd = today.getDate();
+	var todayyyy = today.getFullYear();
+
+	//message to to be displayed
+	var myText = "Your Name is listed as " + myLastName + "," + myFirstName +
+		" and today's date is " + todaymm + "-" + todaydd + "-" + todayyyy + ".";
+
 	//new END!!!
-    
-		//part of code that needs to be amended!!!
-		
-		/*var text = "";
-		var p = 0;
-		var pet1 = $(pet1);
-		var pet2 = $(pet2);
-		var pet3 = $(pet3);
-		*/
 
-		//var processNames = function ()
+	//part of code that needs to be amended!!!
 
-		/*
-		{
-			var pets = "";
-			
-			for (cntr = 1; cntr <= 3; cntr++) 
-			{		
-				var petsId = "pet" + cntr;
-				//console.log("MID " + petsId);
-				var petName = $(petsId).value;
-				
-				pets += petName + "<br>";
-			}
-			
-			//$("msg").innerHTML = pets;
-		}
-			*/		
-		
-		
-		
-		
-		/*while ( p =< 3)
-		{
-			text += "<br> Your Pet " + pet1 + p;
-			//p++;
-		} */
-    
-    
-    
-$("message").innerHTML = myText;
+	$("message").innerHTML = myText;
 }
 
-window.onload = function ()
-{
+var processNames = function () {
+	var pets = "";
+	var numberOfPets = parseInt($("numpets").value)
+
+	for (cntr = 1; cntr <= numberOfPets; cntr++) {
+		var petsId = "pet" + cntr;
+		//console.log("MID " + petsId);
+		var petName = $(petsId).value;
+
+		pets += petName + "<br>";
+	}
+
+	$("message").innerHTML = pets;
+}
+
+window.onload = function () {
 	$("mybutton").onclick = displayMessage;  //Remember no ()!!
+	$("myotherbutton").onclick = processNames;
 }
-
-
-
-
-/*
-"Your Name is listed as "," and today's date is " 
-"Your Pet #1 " " is named " "."; 
-"Your Pet #2 " " is named " "."; 
-"Your Pet #3 " " is named " ".";*/
