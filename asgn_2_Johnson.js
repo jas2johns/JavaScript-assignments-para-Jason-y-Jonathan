@@ -6,6 +6,7 @@ var displayMessage = function () {
 	//new
 	var myFirstName = $("firstname").value;
 	var myLastName = $("lastname").value;
+	var numPets = $("numpets").value;
     //var numOfPets = $("numpets_error").value;
 	
 	/* if (myFirstName == '' || myLastName == '')
@@ -20,12 +21,12 @@ var displayMessage = function () {
                 $("firstname_error").innerHTML = "Please enter  your First name ";
 		          //return;
         }
-        else if
+        else if (myLastName == "")
         {
                 $("lastname_error").innerHTML = "Please enter your last name ";
 		          //return;
         }
-        else if
+        else if (numpets)
         {
                 $("numpets_error").innerHTML = "Please enter number of pets ";
 		          //return;
