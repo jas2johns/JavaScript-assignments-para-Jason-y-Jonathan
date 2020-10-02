@@ -1,93 +1,83 @@
-		var $ = function (id) 
-        {
-			return document.getElementById(id);
-		}
-        
+var $ = function (id) 
+{
+    return document.getElementById(id);
+}
+
             
-    //code to needs to concatenated    
-        
-         
+//code to needs to concatenated        
+
 var validateForm = function ()
 {
+    var isValid = true;
+
     var myFirstName = $("firstname").value;
 	var myLastName = $("lastname").value;
     var email = $("email").value;
     var city = $("city").value;
     var donation = $("donation").value;
-	
+    var donationAmount = parseInt(donation);
+
 	if (myFirstName == '')
-	   {
-		  $("firstnameerror").innerHTML = "Enter a first name";
-	   }
+    {
+        $("firstnameerror").innerHTML = "Enter a first name";        
+        isValid = isValid && false;
+    }
     
-    else if (myLastName == '')
-        {
-            $("lastnameerror").innerHTML = "Enter last name";
-        }
+     if (myLastName == '')
+    {
+        $("lastnameerror").innerHTML = "Enter last name";
+        isValid = isValid && false;
+    }
             
-    else if (email == '')
-        {
-            
-        }
-    else if (city == '')
-        
-    else if (donation == '')
-        
-	else
-	{
-		$("myform").submit();
-	}
-}
+     if (email == '')
+    {
+        $("emailerror").innerHTML = "Enter email address";
+        isValid = isValid && false;
+    }
 
-
-
-var donationTrigger = function()
-{
-	var donation = $("donation").value;
-	
-	if (donation > 0)
-	{
-		$("msg").innerHTML = "Thank you for donating!" + "$" + donation;
-	}
-	else if (donation == 0)
-	{
-		$("msg").innerHTML = "Please consider donating next time";
-	}
+     if (city == '-')
+    {
+        $("cityerror").innerHTML = "Enter city";
+        isValid = isValid && false;
+    }
     
+    if (donation == '')
+    {
+        $("donationerror").innerHTML = "Enter donation amount";
+        isValid = isValid && false;
+    }    
+    else if (donationAmount > 0) 
+	{
+		$("donationerror").innerHTML = "Thank you for donating!" + "$" + donation;
+	}
     else
-        {
-            $("msg").innerHTML = "Please enter a value"
-        }
-}
+    {
+        $("donationerror").innerHTML = "Please enter a valid value";
+        isValid = isValid && false;
+    }
 
-        
+    if(isValid)
+    {
+        $("myform").submit();
+    }
+}
 
 var clearAll = function ()
-
 {
-    $("firstname").value == "";
-    $("lastname").value == "";
-    $("email").value == "";
-    $("city").value == "";
-    $("donation").value == "";
+    $("firstname").value = "";
+    $("lastname").value = "";
+    $("email").value = "";
+    $("city").value = "-";
+    $("donation").value = "";
 }
 
-    // THE BUTTONS !!!
-    window.onload = function ()
-    {
-        $("addpatron").onclick = displayMessage;  //Remember no ()!!
-        
-    }
-    
-    window.onload = function ()
-    
-    {
-        $("clearfields").onclick = clearAll;
-        $("firstname").value = "";
-        $("firstname").focus();
-    }
-    
-    
+// THE BUTTONS !!!
+window.onload = function ()
+{
+    $("addpatron").onclick = validateForm;  //Remember no ()!!
+    $("clearfields").onclick = clearAll;  
+    $("firstname").focus();
+}   
     
     /*
     var myFirstName = $("firstname").value;
