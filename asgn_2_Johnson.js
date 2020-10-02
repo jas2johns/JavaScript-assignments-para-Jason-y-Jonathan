@@ -15,22 +15,27 @@ var displayMessage = function () {
 		return;
 	}
     */
-    
+	
+		var isValid;
         if  (myFirstName == "")
         {
-                $("firstname_error").innerHTML = "Please enter  your First name ";
-		          //return;
+				$("firstname_error").innerHTML = "Please enter  your First name ";		          
+				isValid = false;
         }
         else if (myLastName == "")
         {
-                $("lastname_error").innerHTML = "Please enter your last name ";
-		          //return;
+				$("lastname_error").innerHTML = "Please enter your last name ";		          
+				isValid = false;
         }
         else if (numpets)
         {
                 $("numpets_error").innerHTML = "Please enter number of pets ";
-		          //return;
-        }
+		        isValid = false;
+		}
+		
+		if(!isValid) {
+			return;
+		}
 	
 	//Dates defined
 	var today = new Date();   //Today's Date
