@@ -1,7 +1,7 @@
-		var $ = function (id) 
-        {
-			return document.getElementById(id);
-		}
+var $ = function (id) 
+    {
+		return document.getElementById(id);
+	}
         
             
     //code to needs to concatenated    
@@ -9,58 +9,62 @@
          
 var validateForm = function ()
 {
+    var isValid = true;
     var myFirstName = $("firstname").value;
 	var myLastName = $("lastname").value;
     var email = $("email").value;
     var city = $("city").value;
     var donation = $("donation").value;
+    var donationAmount = parseInt(donation);
 	
 	if (myFirstName == '')
 	   {
 		  $("firstnameerror").innerHTML = "Enter a first name";
+           isValid = isValid && false;
 	   }
     
-    else if (myLastName == '')
+    if (myLastName == '')
         {
             $("lastnameerror").innerHTML = "Enter last name";
+            isValid = isValid && false;
         }
             
-    else if (email == '')
+    if (email == '')
         {
-            
+            $("emailerror").innerHTML = "Enter email address";
+            isValid = isValid && false;
         }
-    else if (city == '')
-        
-    else if (donation == '')
-        
-	else
+    if (city == '')
+        {
+            $("cityerror").innerHTML = "Select a City";
+            isValid = isValid && false;
+        }
+    if (donation == '')
+        {
+            $("donationerror").innerHTML = "Enter donation amount";
+            isValid = isValid && false;
+        }
+    // i think i dont need this BELLOW!!!
+    
+    /*
+    else if (donationAmount > 0);
+        {
+            $("donationerror").innerHTML = "Thank you for donating " + "$" + donationAmount + " !";
+        }
+    
+    */
+    else
+        {
+           $("donationerror").innerHTML = "Please enter a valid value";
+            isValid = isValid && false;
+        }
+	if (isValid)
 	{
 		$("myform").submit();
 	}
 }
 
-
-
-var donationTrigger = function()
-{
-	var donation = $("donation").value;
-	
-	if (donation > 0)
-	{
-		$("msg").innerHTML = "Thank you for donating!" + "$" + donation;
-	}
-	else if (donation == 0)
-	{
-		$("msg").innerHTML = "Please consider donating next time";
-	}
-    
-    else
-        {
-            $("msg").innerHTML = "Please enter a value"
-        }
-}
-
-        
+// clear all button function
 
 var clearAll = function ()
 
@@ -68,74 +72,18 @@ var clearAll = function ()
     $("firstname").value == "";
     $("lastname").value == "";
     $("email").value == "";
-    $("city").value == "";
+    $("city").value == "-";
     $("donation").value == "";
 }
+
+
 
     // THE BUTTONS !!!
     window.onload = function ()
     {
-        $("addpatron").onclick = displayMessage;  //Remember no ()!!
-        
-    }
-    
-    window.onload = function ()
-    
-    {
+        $("addpatron").onclick = validateForm;  //Remember no ()!!
         $("clearfields").onclick = clearAll;
-        $("firstname").value = "";
         $("firstname").focus();
     }
     
-    
-    
-    /*
-    var myFirstName = $("firstname").value;
-	var myLastName = $("lastname").value;
-    var email = $("email").value;
-    var city = $("city").value;
-    var donation = $("donation").value;
-    */
-    
-    
-    /*
-                FOR LOOP THAT I THOUGHT 
-    
-                var displayMessage = function ()
-    {
-        var errorFound = "No";
-        if  (myFirstName == "")
-        {
-                $("firstnameerror").innerHTML = "Please enter your first name ";
-		          errorFound = "Yes";
-        }
-        if (myLastName == "")
-        {
-                $("lastnameerror").innerHTML = "Please enter your last name ";
-		          errorFound = "Yes";
-        }
-        if (email == "")
-        {
-                $("email_error").innerHTML = "Enter Email";
-		          errorFound = "Yes";
-        }
-
-        if (city == "")
-            {
-                $("cityerror").innerHTML = "Select a City from the list";
-                errorFound = "Yes";
-            }
-        if (donation == "")
-            {
-                $("donationerror").innerHTML = "Enter Donation Amount";
-                errorFound = "Yes";
-            }
-
-        if(errorFound == "Yes")
-            {
-                return;
-            }
-            
-        }
-    
-    */
+   
