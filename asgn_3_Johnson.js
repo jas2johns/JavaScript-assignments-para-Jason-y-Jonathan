@@ -8,6 +8,8 @@ var $ = function (id)
 
 var validateForm = function ()
 {
+    clearErrorMessages();
+    
     var isValid = true;
     var myFirstName = $("firstname").value;
 	var myLastName = $("lastname").value;
@@ -18,24 +20,24 @@ var validateForm = function ()
 	
 	if (myFirstName == '')
 	   {
-		  $("firstnameerror").innerHTML = "Enter a first name";
+		  $("firstnameerror").innerHTML = "Enter a First name";
            isValid = isValid && false;
 	   }
     
     if (myLastName == '')
         {
-            $("lastnameerror").innerHTML = "Enter last name";
+            $("lastnameerror").innerHTML = "Enter Last name";
             isValid = isValid && false;
         }
             
     if (email == '')
         {
-            $("emailerror").innerHTML = "Enter email address";
+            $("emailerror").innerHTML = "Enter Email";
             isValid = isValid && false;
         }
-    if (city == '')
+    if (city == '-')
         {
-            $("cityerror").innerHTML = "Select a City";
+            $("cityerror").innerHTML = "Select a City from the list";
             isValid = isValid && false;
         }
     if (donation == '')
@@ -43,18 +45,15 @@ var validateForm = function ()
             $("donationerror").innerHTML = "Enter donation amount";
             isValid = isValid && false;
         }
-    // i think i dont need this BELLOW!!!
     
-    /*
-    else if (donationAmount > 0);
+    if(isNaN(donationAmount))
         {
-            $("donationerror").innerHTML = "Thank you for donating " + "$" + donationAmount + " !";
+           $("donationerror").innerHTML = "Enter Donation Amount";
+            isValid = isValid && false;
         }
-    
-    */
-    else
+    if (isValid == false)
         {
-           $("donationerror").innerHTML = "Please enter a valid value";
+            $("endmessage").innerHTML = "Patron Not Added!";
             isValid = isValid && false;
         }
 	if (isValid)
@@ -67,13 +66,24 @@ var validateForm = function ()
 
 var clearAll = function ()
 {
-    $("firstname").value == "";
-    $("lastname").value == "";
-    $("email").value == "";
-    $("city").value == "-";
-    $("donation").value == "";
+    $("firstname").value = "";
+    $("lastname").value = "";
+    $("email").value = "";
+    $("city").value = "-";
+    $("donation").value = "";
+    
+    clearErrorMessages();
 }
 
+var clearErrorMessages = function ()
+
+{
+    $("firstnameerror").innerHTML = "";
+    $("lastnameerror").innerHTML = "";
+    $("emailerror").innerHTML = "";
+    $("cityerror").innerHTML = "";
+    $("donationerror").innerHTML = "";
+}
 
 
     // THE BUTTONS !!!
