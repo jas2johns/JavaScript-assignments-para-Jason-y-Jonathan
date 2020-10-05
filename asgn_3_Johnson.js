@@ -51,12 +51,12 @@ var validateForm = function ()
            $("donationerror").innerHTML = "Enter Donation Amount";
             isValid = isValid && false;
         }
-    if (isValid == false)
+    if (!isValid)
         {
             $("endmessage").innerHTML = "Patron Not Added!";
             isValid = isValid && false;
-        }
-	if (isValid)
+        } 
+        else
 	{
 		$("myform").submit();
 	}
