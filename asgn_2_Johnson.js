@@ -1,13 +1,12 @@
-var $ = function (id) 
-        {
-			return document.getElementById(id);
-		}
+var $ = function (id) {
+	return document.getElementById(id);
+}
 
-var displayMessage = function ()
-{
+var displayMessage = function () {
 	//new
 	var myFirstName = $("firstname").value;
 	var myLastName = $("lastname").value;
+	var numPets = $("numpets").value;
     //var numOfPets = $("numpets_error").value;
 	
 	/* if (myFirstName == '' || myLastName == '')
@@ -16,22 +15,27 @@ var displayMessage = function ()
 		return;
 	}
     */
-    
+	
+		var isValid;
         if  (myFirstName == "")
         {
-                $("firstname_error").innerHTML = "Please enter  your First name ";
-		          //return;
+				$("firstname_error").innerHTML = "Please enter  your First name ";		          
+				isValid = false;
         }
-        else if
+        else if (myLastName == "")
         {
-                $("lastname_error").innerHTML = "Please enter your last name ";
-		          //return;
+				$("lastname_error").innerHTML = "Please enter your last name ";		          
+				isValid = false;
         }
-        else if
+        else if (numpets)
         {
                 $("numpets_error").innerHTML = "Please enter number of pets ";
-		          //return;
-        }
+		        isValid = false;
+		}
+		
+		if(!isValid) {
+			return;
+		}
 	
 	//Dates defined
 	var today = new Date();   //Today's Date
@@ -85,7 +89,7 @@ window.onload = function ()
         
 		*/
 
-		//var processNames = function ()
+	//part of code that needs to be amended!!!
 
 		/*
 		{

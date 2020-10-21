@@ -4,9 +4,8 @@ var $ = function (id)
 	}
         
             
-    //code to needs to concatenated    
-        
-         
+//code to needs to concatenated        
+
 var validateForm = function ()
 {
     clearErrorMessages();
@@ -66,7 +65,6 @@ var validateForm = function ()
 // clear all button function
 
 var clearAll = function ()
-
 {
     $("firstname").value = "";
     $("lastname").value = "";
