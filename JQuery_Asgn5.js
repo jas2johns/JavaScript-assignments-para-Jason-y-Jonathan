@@ -30,8 +30,8 @@ $(document).ready(function(){
         // transmition animation for the big img
      $("img").click (
          function(event) {
-             $( "#bigimage" ).fadeIn( "slow" );
-         
+             $( "#bigimage" ).fadeToggle( "step" );
+             $("#currentimage").attr("src", event.target.src)
      });   
     // 4th submit me button click event
         // validate first name text box 
