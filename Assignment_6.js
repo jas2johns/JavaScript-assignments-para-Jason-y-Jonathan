@@ -48,15 +48,16 @@ $(document).ready(function () {
             
         } 
        
+        // to do still as of today
+            // h1 heading i believe with title? and spacing for box size
         
-        
-        // made div innerhtml message appear
-        var msg = $('#message').html("You are a: " + genderType +  "<br> You have: " + yearsInt + " years experience").css("background-color", "yellow");
-
-
-
-
         //make hidden div yellow dynamically!
+        var msg = $('#message').html('<h1>' + "Employment Stats for " + firstName + " " + lastName + '</h1>' + "<br>" + "You are a: " + genderType +  "<br> You have: " + yearsInt + " years experience").css({"background-color": "yellow", "background-size": "300px 300px",  "padding": "50px"});
+
+
+
+
+        
     });
 
 });
