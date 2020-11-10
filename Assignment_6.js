@@ -18,14 +18,10 @@ $(document).ready(function () {
         }
 
         // same process for gender
-        var gender = $('input [name="gender"]:checked').val();
+        var gender = $('input[name="gender"]:checked').val();
         if (!gender) {
+            
             $('#gender_error').html('You must select a gender');
-
-            // this does not work!!! the focus attribute
-
-            $(!'input [name="gender"]: checked').focus();
-
             return;
         }
 
@@ -33,21 +29,34 @@ $(document).ready(function () {
         var years = $('#years').val();
         if (years == '-') {
             $('#years_error').html("You must select a number");
-            $('#years').focus();
+            //$('#years').focus();
             return;
         }
-
+        
+        // condiditions for the message print
+        
         var yearsInt = parseInt(years);
-
+        
+        var genderType;
+        
+        if (gender == "M") {
+            var genderType = gender += "ale";
+            
+        }
+        else {
+            var genderType = gender += "emale";
+            
+        } 
+       
+        
+        
         // made div innerhtml message appear
-        var msg = $('#message').html("You are a " + gender +  "<br> You have: " + yearsInt + "years experience").css("background-color", "yellow");
+        var msg = $('#message').html("You are a: " + genderType +  "<br> You have: " + yearsInt + " years experience").css("background-color", "yellow");
 
 
-        // im not sure if line 45 is Concatenated properly....   but the real issue is line 20 to 30
 
 
         //make hidden div yellow dynamically!
     });
 
 });
-
