@@ -5,13 +5,13 @@ $(document).ready(function() {
         $('#mysubmit').click(function () {
             
         // error condition
-        var errorFound == true;    
+        var errorFound = true;    
         // step 1 validate first name input
         var firstName = $('#first_name').val();
         if (firstName == '') {
             $('#first_error').html('Please enter a first name');
             $('#first_name').focus();
-            errorFound == false;
+            errorFound = false;
             return;
         }
         else {
@@ -22,7 +22,7 @@ $(document).ready(function() {
         if (lastName == '') {
             $('#last_error').html('Please enter a last name');
             $('#last_name').focus();
-            errorFound == false;
+            errorFound = false;
             return;
         }
         else {  
@@ -37,26 +37,22 @@ $(document).ready(function() {
          
         var startDate = $('#start_date').val();
         
-        if (startDate == true) {
-            return true;
-        }   
-        
         if (!startDate) {
         $('#start_error').html('Please pick a Date');
         //$('start_date').focus();
-        errorFound == false;    
+        errorFound = false;    
         return;
         }
         else {
             $('#start_error').html('');
         }
         
-        if (errorFound == false) {
-            var msg = $('#message').html("Please correct Errors and Try Again".css({'color': "red"}););
+        if (errorFound = false) {
+            var msg = $('#message').html("Please correct Errors and Try Again").css({'color': "red"});
             return;
             }
         else {
-            var msg = $('#message').html("Success: " + firstName + " " + lastName + "<br>" + "Use the Start Date as your Password".css({"color": "green"}););
+            var msg = $('#message').html("Success: " + firstName + " " + lastName + "<br>" + "Use the Start Date as your Password").css({"color": "green"});
             return;
         }
         });
@@ -64,13 +60,10 @@ $(document).ready(function() {
 	});
 
 //first basically make a form validation easy peasy CHECK 90% done as of 11-21-20
-    // however.... you need to grab the message id and do jquerey styling based on if else statement e.g: Submit truey is GREEN
-    // Submit falsey is RED.. comprendo??
+    // CHECKED however.... you need to grab the message id and do jquerey styling based on if else statement e.g: Submit truey is GREEN
+    
 
-//draft of message print: "Success: " + firstName + " " + lastName + "<br>" + "Use the Start Date as your Password".css({"color": "green"});
-
-//draft of falsey message: "Please correct Errors and Try Again".css({'color': "red"});
-
+    // FIGUIRING OUT Submit falsey is RED.. comprendo??
 
 
 //for the 2nd tab widget make three divs 2 of them draggable and one droppable 
