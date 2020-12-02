@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<title>jQuery UI Tabs Demo</title>
+    
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css" >
+    <link rel="stylesheet" href="assign_7.css">
+    
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<!-- <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script> -->
+    <!-- <script src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script> -->
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="Assign_7.js"></script>
+
+</head>
+
+<body>
+	<h1>Health Care Exchange - First Draft</h1>
+
+	<div id="tabs">
+		<ul>
+            <li><a href="#tabs-1">Sign Up</a></li>
+            <li><a href="#tabs-2">Pick a Plan</a></li>
+            <li><a href="#tabs-3">How do you Feel?</a></li>
+		</ul>
+
+		<div id="tabs-1">
+        <form>
+            <br>
+            <label for="first_name">First Name:</label>
+            <br>
+            <input type="text" id="first_name" name="first_name" required> <span class="error" id="first_error"></span>
+            <br>
+            <label for="last_name">Last Name:</label>
+            <br>
+            <input type="text" id="last_name" name="last_name" required> <span class="error" id="last_error"></span>
+            <br>
+            <label for="start_date">Start Date:</label>
+            <br>
+            <input type="text" id="start_date" name="start_date" size="10px" required>
+            <span class="error" id="start_error"></span>
+            <br>
+            <br>
+            <input type="button" id="mysubmit" value="Create an Account">
+            <br>
+            <div id="message" ></div>
+	   </form> 
+		</div>
+
+		<div id="tabs-2">
+			<p>
+			(CNN) -- The recent discoveries of a stunning trove of new vertebrate species from the Cape Melville area of northeast Queensland, Australia, show that we still have a lot to learn about life on this planet.
+			</p><p>Even though no place on Earth can be described as "pristine" any longer, these creatures live in habitats that have been relatively little disturbed. They include a spectacular gecko and a frog whose eggs develop without a tadpole stage.
+			</p><p>New frogs from heavily explored Australia are somewhat surprising (there are now 239 species, with 25 added in the last 10 years). New species are more likely to turn up in less-explored and more humid lands such as New Guinea. Papua New Guinea, 6% the size of Australia, has 349 species of amphibians, 123 described in the last 10 years.
+			</p>
+		</div>
+
+		<div id="tabs-3">
+			<p>(CNN) -- When SpongeBob SquarePants skips onto shelves in boxes of Kraft Macaroni & Cheese next year, he may be a little less, well, yellow than your kids are used to.
+			</p><p>Kraft has revamped its character-shaped product line for 2014, according to company spokeswoman Lynne Galia. The new versions will have six additional grams of whole grains, be lower in sodium and saturated fat, and will use spices instead of artificial food dyes to recreate the pasta's famous yellow-orange color.
+			</p><p>"Parents have told us that they would like fun Mac & Cheese varieties with the same great taste, but with improved nutrition," Galia said in an e-mail.
+			</p>
+		</div>
+
+	</div>
+
+</body>
+</html>

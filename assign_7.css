@@ -1,0 +1,16 @@
+body  {
+    background-color: lightyellow;
+}
+h1 { 
+    font-family: Ariel, Helvetica, san-serif;
+    color: blue;
+}
+
+.error {
+	color: red;
+}
+/*
+label {
+    padding: 0px 0px 30px;
+}
+*/
