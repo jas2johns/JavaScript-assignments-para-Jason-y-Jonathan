@@ -62,12 +62,8 @@ $(document).ready(function() {
             $( "#PoorPlan" ).draggable();
             $( "#droppable" ).droppable({
                 drop: function( event, ui ) {
-                $( this )
-                    .addClass( "ui-state-highlight" )
-                    .find( "p" )
-                    .html( "Dropped!" );
+                  $(this).addClass( "ui-state-highlight" );
                     // does the if else statement go here? within the .html() within "{}" ?
-                    /*
                         if (ui.draggable.attr("id") == "GreatPlan")
                         {
                             $('#boxResult').html("Great Plan Picked");
@@ -75,13 +71,12 @@ $(document).ready(function() {
                         else if (ui.draggable.attr("id") == "PoorPlan")
                         {
                             $('#boxResult').html("Poor Plan Picked");
-                            $('result').html("My Head Hurts").css({"color": "red"});
+                            $('#result').html("My Head Hurts").css({"color": "red"});
                         }
-                        else (ui.draggable.attr("id") == false)
+                        else
                         {
-                            $('result').html("My Head Hurts").css({"color": "red"});
+                            $('#result').html("My Head Hurts").css({"color": "red"});
                         }
-                    */
                 }
             });
     //end of experiment
