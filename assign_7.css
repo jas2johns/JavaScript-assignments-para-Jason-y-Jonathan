@@ -9,6 +9,26 @@ h1 {
 .error {
 	color: red;
 }
+
+/* Experiment */
+
+  #GreatPlan, #PoorPlan { 
+      width: 100px; 
+      height: 100px; 
+      padding: 0.5em; 
+      float: left; 
+      margin: 10px 10px 10px 0; 
+}
+  #droppable { 
+      width: 150px; 
+      height: 250px; 
+      padding: 0.5em; 
+      float: right;
+      position: static;
+      left: 1300px;
+      top: 300px;
+      margin: 10px; 
+}
 /*
 label {
     padding: 0px 0px 30px;
