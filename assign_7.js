@@ -10,9 +10,9 @@ $(document).ready(function() {
         var firstName = $('#first_name').val();
         if (firstName == '') {
             $('#first_error').html('Please enter a first name');
-            $('#first_name').focus();
+            //$('#first_name').focus();
             errorFound = false;
-            return;
+            //return;
         }
         else {
             $('#first_error').html('');
@@ -21,9 +21,9 @@ $(document).ready(function() {
         var lastName = $('#last_name').val();
         if (lastName == '') {
             $('#last_error').html('Please enter a last name');
-            $('#last_name').focus();
+            //$('#last_name').focus();
             errorFound = false;
-            return;
+            //return;
         }
         else {  
             $('#last_error').html('');        
@@ -41,13 +41,13 @@ $(document).ready(function() {
         $('#start_error').html('Please pick a Date');
         //$('start_date').focus();
         errorFound = false;    
-        return;
+        //return;
         }
         else {
             $('#start_error').html('');
         }
-        
-        if (errorFound = false) {
+        //jon please explain why this "==" worked below.. but not "="  ?? 
+        if (errorFound == false) {
             var msg = $('#message').html("Please correct Errors and Try Again").css({'color': "red"});
             return;
             }
@@ -57,19 +57,50 @@ $(document).ready(function() {
         }
         });
     
+        //experiment
+            $( "#GreatPlan" ).draggable();
+            $( "#PoorPlan" ).draggable();
+            $( "#droppable" ).droppable({
+                drop: function( event, ui ) {
+                $( this )
+                    .addClass( "ui-state-highlight" )
+                    .find( "p" )
+                    .html( "Dropped!" );
+                    // does the if else statement go here? within the .html() within "{}" ?
+                    /*
+                        if (ui.draggable.attr("id") == "GreatPlan")
+                        {
+                            $('#boxResult').html("Great Plan Picked");
+                        }
+                        else if (ui.draggable.attr("id") == "PoorPlan")
+                        {
+                            $('#boxResult').html("Poor Plan Picked");
+                            $('result').html("My Head Hurts").css({"color": "red"});
+                        }
+                        else (ui.draggable.attr("id") == false)
+                        {
+                            $('result').html("My Head Hurts").css({"color": "red"});
+                        }
+                    */
+                }
+            });
+    //end of experiment
 	});
-
-//first basically make a form validation easy peasy CHECK 90% done as of 11-21-20
-    // CHECKED however.... you need to grab the message id and do jquerey styling based on if else statement e.g: Submit truey is GREEN
-    
-
-    // FIGUIRING OUT Submit falsey is RED.. comprendo??
-
 
 //for the 2nd tab widget make three divs 2 of them draggable and one droppable 
 
     // make event handler for on drop event to get .val() or smthn that processes to tab 3
-
-//make another event handler for true and false data from user input
+        // so an if statement where: "true" is green/good 
+        //and else... false or null/blank its bad/ red
+            // then submit
+            // no RETURNS because they need to be able to be overiden and not malleable
     
     // and add effects on the divs
+
+// for false plans eg. no plan or bad plan use shake effect and red text
+
+    // for true or good plan add call green text and and the roll up effect
+
+//no returns for the above statment with dropped divs!!!!!!!
+
+//
