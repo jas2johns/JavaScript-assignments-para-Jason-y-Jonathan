@@ -1,3 +1,4 @@
+var results = "I don't know";
 $(document).ready(function() {
 		
     $( "#tabs" ).tabs();
@@ -63,26 +64,42 @@ $(document).ready(function() {
             $( "#droppable" ).droppable({
                 drop: function( event, ui ) {
                 $( this )
-                    .addClass( "ui-state-highlight" )
-                    .find( "p" )
-                    .html( "Dropped!" );
-                    // does the if else statement go here? within the .html() within "{}" ?
-                    /*
+                    .addClass( "ui-state-highlight" );                    
                         if (ui.draggable.attr("id") == "GreatPlan")
                         {
                             $('#boxResult').html("Great Plan Picked");
+                            results = "Great";
                         }
                         else if (ui.draggable.attr("id") == "PoorPlan")
                         {
                             $('#boxResult').html("Poor Plan Picked");
-                            $('result').html("My Head Hurts").css({"color": "red"});
+                            results = "My Head Hurts";
                         }
-                        else (ui.draggable.attr("id") == false)
-                        {
-                            $('result').html("My Head Hurts").css({"color": "red"});
-                        }
-                    */
+                                           
                 }
+            });
+            //additional experiment
+            var callback = function()
+			{
+				setTimeout(function()
+				{
+					$("#planPicked").removeAttr( "style" ).fadeIn();
+				}, 100 );
+			}
+            var options = [];
+            //end of end of experiment
+            $("#showFeelings").click( function() {
+                        if (results == "Great")  {
+                            $('#result').css({"color": "green"});
+                            $("#planPicked").effect( "blind", options, 1000, callback );
+                        } 
+                        else if (results == "My Head Hurts") {
+                            $('#result').css({"color": "red"});
+                            //figure out
+                            $("#planPicked").effect( "bounce", options, 1000, callback );
+                        }
+                $('#result').html(results);
+                $("#planPicked").effect( "shake", options, 1000, callback );
             });
     //end of experiment
 	});
