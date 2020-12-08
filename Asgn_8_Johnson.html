@@ -1,0 +1,120 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Login</title>
+</head>
+<body>
+		<h1>Login</h1>
+		<p>User ID: <input type="text" name="user" id="user"></p>
+        <p>Password: <input type="password" name="password" id="password"></p>
+		<p><input type="button" value="Login" id="Login">
+
+		<div id="targetDiv"></div>
+    <style>
+        body{background: lightgray;}
+    </style>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+	<script>
+
+	$(document).ready(function() {
+
+		$('#Login').click (function () {
+            // yeah ... all this gotta go....
+			var targetDiv = $('#targetDiv');
+            
+            /* i made this
+            
+            if (targetDiv == false) {
+                targetDiv.css({'color': 'red'});
+                targetDiv = false;
+            }
+            else {
+                targetDiv.css({'color': 'red'});
+                targetDiv = true;
+            }
+            
+            */
+            
+            //begin of new
+            var validate = true;
+            var success = "You have successfully logged on to your class!";
+            var user = $('#user').val();
+            var pass = $('#pass').val();
+            
+            if (user == "user1" && pass == "pass1") {
+            targetDiv.html(success);
+            validate = true;
+            }
+            else if (user == "user2" && pass == "pass2") {
+            targetDiv.html(success);
+            validate = true;
+            }
+            else if (user == "user3" && pass == "pass3"){
+            targetDiv.html(success);
+            validate = true;
+            }
+            else {
+            validate = false;
+            
+            //div message result
+            targetDiv.html("Error: User Id/Password (" + user + "|" + pass + ") is not a valid combination, please try again.").css({'color': 'red'});
+            }
+            //end of new
+            
+            //needs to be changed
+			var guess = $('#guess').val();
+            //needs to be changed
+			var data = guess;
+
+			$.post(
+				"http://profperrytest.com/AJAXPHP/validate_logon.php",
+				'data='+data,
+				function(result){
+					targetDiv.html(result);
+				}
+			);
+		});
+
+	});  // end ready
+        
+        
+        
+        
+        /*
+            // if statement template
+            
+            var validate = true;
+            var success = "You have successfully logged on to your class!";
+            var user = $('#user').val();
+            var pass = $('#pass').val();
+            
+            if (user == "user1" && pass == "pass1") {
+            targetDiv.html(success);
+            validate = true;
+            }
+            else if (user == "user2" && pass == "pass2") {
+            targetDiv.html(success);
+            validate = true;
+            }
+            else if (user == "user3" && pass == "pass3"){
+            targetDiv.html(success);
+            validate = true;
+            }
+            else {
+            validate = false;
+            
+            //div message result
+            targetDiv.html("Error: User Id/Password (" + user + "|" + pass + ") is not a valid combination, please try again.").css({'color': 'red'});
+            }
+        
+        
+        
+        
+        
+        */
+	</script>
+</body>
+</html>
