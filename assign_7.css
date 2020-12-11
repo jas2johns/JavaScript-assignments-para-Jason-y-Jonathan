@@ -40,6 +40,19 @@ h1 {
       left: 350px;       
       margin: 10px; 
 }
+button {
+    position: absolute;
+}
+#planPicked {
+    padding: 25px 20px 25px 50px;
+}
+#result {
+    padding: 25px 20px 75px 25px;
+    width: 40%;
+    border-style: solid;
+    border-color: lightgray;
+    font-size: 35px;
+}
 /*
 label {
     padding: 0px 0px 30px;
