@@ -1,22 +1,23 @@
-
 <!doctype html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Login</title>
+    <title>Login</title>
+    <style>
+        body {
+            background: lightgray;
+        }
+    </style>
 </head>
 <body>
-		<h1>Login</h1>
-		<p>User ID: <input type="text" name="user" id="user"></p>
-        <p>Password: <input type="password" name="password" id="pass"></p>
-		<p><input type="button" value="Login" id="Login">
+    <h1>Login</h1>
+    <p>User ID: <input type="text" name="user" id="user"></p>
+    <p>Password: <input type="password" name="password" id="pass"></p>
+    <p><input type="button" value="Login" id="Login">
 
-		<div id="targetDiv"></div>
-    <style>
-        body{background: lightgray;}
-    </style>
+    <div id="targetDiv"></div>
+   
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-
 	<script>
 
 	$(document).ready(function() {
@@ -39,37 +40,26 @@
             */
             
             //begin of new
-            var validate = true;
             var success = "You have successfully logged on to your class!";
             var user = $('#user').val();
             var pass = $('#pass').val();
-            var removeColor = $(targetDiv).removeAttr("style");
+            targetDiv.removeAttr("style");
             
             if (user == "user1" && pass == "pass1") {
-            targetDiv.html(success);
-            removeColor;
-            //validate = true;
-            return;
+                targetDiv.html(success);            
+                return;
+            } else if (user == "user2" && pass == "pass2") {
+                targetDiv.html(success);            
+                return;
+            } else if (user == "user3" && pass == "pass3"){
+                targetDiv.html(success);            
+                return;
+            } else {            
+                //div message result
+                targetDiv.html("Error: User Id/Password (" + user + '|' + pass + ") is not a valid combination, please try again.").css({'color': 'red'});
+                return;
             }
-            else if (user == "user2" && pass == "pass2") {
-            targetDiv.html(success);
-            removeColor;
-            //validate = true;
-            return;
-            }
-            else if (user == "user3" && pass == "pass3"){
-            targetDiv.html(success);
-            removeColor;
-            //validate = true;
-            return;
-            }
-            else {
-            //validate = false;
-            
-            //div message result
-            targetDiv.html("Error: User Id/Password (" + user + '|' + pass + ") is not a valid combination, please try again.").css({'color': 'red'});
-            return;
-            }
+
             //end of new
             
             //needs to be changed
@@ -87,11 +77,7 @@
 			);
 		});
 
-	});  // end ready
-        
-        
-        
-        
+	});  // end ready        
         /*
             // if statement template
             
