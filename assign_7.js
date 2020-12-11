@@ -79,14 +79,16 @@ $(document).ready(function() {
                 }
             });
             //additional experiment
+            var removeStyleFunction = function() {
+                $("#planPicked").removeAttr( "style" ).fadeIn();
+            }
+
             var callback = function()
 			{
-				setTimeout(function()
-				{
-					$("#planPicked").removeAttr( "style" ).fadeIn();
-				}, 100 );
-			}
-            var options = [];
+				setTimeout(removeStyleFunction, 100);
+            }
+            
+            var options = {};
             //end of end of experiment
             $("#showFeelings").click( function() {
                         if (results == "Great")  {
