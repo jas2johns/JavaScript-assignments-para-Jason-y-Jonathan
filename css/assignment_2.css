@@ -1,0 +1,21 @@
+html {
+    margin: 0;
+    padding: 0;
+}
+#logo { 
+    position: absolute; 
+    top: 0px; 
+    left: 0px; 
+    width: 800px; 
+}
+body {
+			background-color: #F0E68C;
+			font-family: Ariel, Helvetica, sans-serif;
+		}
+		
+#patron {
+			width: 780px;
+			padding: 115px 12px 0px;
+            background-color: #E6E6FA;
+		}
+

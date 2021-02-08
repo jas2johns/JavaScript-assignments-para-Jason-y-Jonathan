@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+	<title>Assignment 2</title>
+    <link rel="stylesheet" href="css/assignment_2.css">
+
+</head>
+
+    <body>
+
+    <div id="logo">
+        <img src="http://profperry.com/Classes20/PHPwithMySQL/KingLibLogo.jpg" alt="King Library Logo">
+    </div>
+
+    <div id="patron">
+        <form method="post" id="myform" action="assignment_2_add_patron.php">
+
+        <p>Please sign up</p>
+
+        <p>
+        First Name:<br>
+        <input type="text" name="firstname" id="firstname" size="30">
+        </p>
+
+        <p>
+        Last Name:<br>
+        <input type="text" name="lastname" id="lastname" size="30">
+        </p>
+
+        <p>
+        Email:<br>
+        <input type="text" name="email" id="email" size="40">
+        </p>
+
+        <p>
+        City of Residence<br>
+        <select name="city" id="city" size="1" >
+            <option value="-">-</option>
+            <option value="Chicago">Chicago</option>
+            <option value="Detroit">Detroit</option>
+            <option value="Toronto">Toronto</option>
+        </select>
+        </p>
+
+        <p>
+            <input type="submit" id="submit" value="Submit Information">
+        </p>
+
+        </form>
+    </div>
+
+    </body>
+</html>
