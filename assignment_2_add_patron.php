@@ -35,20 +35,20 @@
                 $fullNameTrue = false;
             }
             // NO Else statement
-            if ($fullNameTrue = false) {
-                //return;
+            if ($fullNameTrue == false) {
+                return;
                 }
             //no else statement
             else {
                 echo "<p>Name: " . $fullName . "</p><br>";
-                return;   
+                //return;   
             }
             if ($email = ' ') {
                 echo "<p>Error: You must enter an Email Address </p>"; 
             }
             else {
-                echo "<br>";
-                echo "\n" . "Email: " . $email . "<br>";
+                echo "<br><p>";
+                echo "\n" . "Email: " . $email . "<br></p>";
                 //return;
             }
         
@@ -59,8 +59,8 @@
                 echo "<p>Error: You must select a City </p>";
             } 
             else {
-                echo "<br>";
-                echo "\n" . "City: " . $city;
+                echo "<br><p>";
+                echo "\n" . "City: " . $city . "</p>";
                 //return;
             }
 
