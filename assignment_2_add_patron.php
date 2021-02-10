@@ -37,6 +37,12 @@ if ($city == '-') {
     $isValid = false;
 }
 
+// birth year code needed!!!!!!	
+// if and else if then else	
+// so... yea	
+
+
+
 ?>
 
 <html>
