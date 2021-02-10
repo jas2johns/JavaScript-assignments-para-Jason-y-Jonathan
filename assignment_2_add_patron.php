@@ -10,41 +10,56 @@
         </div>
 
     <div id="patron">
-        
+        <h4 name="thanks"></h4>
         <?php 
-            $firstName =$_POST['firstname'];
-            $lastName =$_POST['lastname'];
+            $firstName = $_POST['firstname'];
+            $lastName = $_POST['lastname'];
             $fullName = $firstName . " " . $lastName;
             $email = $_POST['email'];
             $city = $_POST['city'];
             $fullNameTrue = true;
+            $thanks = $_POST['thanks'];
+            $thanks2 = 'Thank You for Registering!';
+            $registerTrue = true;
 
             // write an if statement whether they registered succesfully
-            //<h4>Thank You for Registering!</h4>
+                //ok so like install another 'flag boolean' to trgger when true then echo
+                    //
         
-            if ($firstName = ' ') {
+        
+                    //OK u must ix the html tags in it's spacing
+        
+                    //also fix the birth year thingy form element and wirte an if statement to code it
+        
+                    // lastly fix the CSS for the purple div/body thingy  AS OF Feb 9th 2021
+        
+        
+            if ($firstName == '') {
                 echo "<p>Error: You must enter a First Name </p>";
                 $fullNameTrue = false;
+                $registerTrue = false;
             }
             else {
                 $fullNameTrue = true;
-                return;
+                //return;
             }
-            if ($lastName = ' ') {
+            if ($lastName == '') {
                 echo "<p>Error: You must enter a Last Name </p>";
                 $fullNameTrue = false;
+                $registerTrue = false;
             }
             // NO Else statement
             if ($fullNameTrue == false) {
-                return;
+                $registerTrue = false;
                 }
             //no else statement
             else {
                 echo "<p>Name: " . $fullName . "</p><br>";
                 //return;   
             }
-            if ($email = ' ') {
-                echo "<p>Error: You must enter an Email Address </p>"; 
+            if ($email == '') {
+                echo "<p>Error: You must enter an Email Address </p>";
+                $registerTrue = false;
             }
             else {
                 echo "<br><p>";
@@ -53,9 +68,11 @@
             }
         
             // birth year code needed!!!!!!
+                // if and else if then else
+                    // so... yea
         
         
-            if ($city = '-') {
+            if ($city == '-') {
                 echo "<p>Error: You must select a City </p>";
             } 
             else {
@@ -63,8 +80,12 @@
                 echo "\n" . "City: " . $city . "</p>";
                 //return;
             }
-
-
+            if($registerTrue == false) {
+                
+            }
+            else {
+                echo $thanks .= $thanks2 ;
+            }
         ?>
     </div>
     </body>
