@@ -10,7 +10,7 @@
         </div>
 
     <div id="patron">
-        <h4 name="thanks"></h4>
+        <h4></h4>
         <?php 
             $firstName = $_POST['firstname'];
             $lastName = $_POST['lastname'];
@@ -18,7 +18,7 @@
             $email = $_POST['email'];
             $city = $_POST['city'];
             $fullNameTrue = true;
-            $thanks = $_POST['thanks'];
+            //$thanks = getElementsByTagName('h4') ;
             $thanks2 = 'Thank You for Registering!';
             $registerTrue = true;
 
@@ -27,7 +27,7 @@
                     //
         
         
-                    //OK u must ix the html tags in it's spacing
+                    //OK u must fix the html tags in it's spacing
         
                     //also fix the birth year thingy form element and wirte an if statement to code it
         
@@ -84,8 +84,10 @@
                 
             }
             else {
-                echo $thanks .= $thanks2 ;
+                echo //$thanks3 ;
             }
+        
+        // also add the 'GO BACK AND MAKE CORRECTIONS' msg if its false
         ?>
     </div>
     </body>
