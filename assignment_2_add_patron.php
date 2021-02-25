@@ -3,17 +3,16 @@ $isValid = true;
 $firstName = $_POST['firstname'];
 $lastName = $_POST['lastname'];
 $email = $_POST['email'];
+$year1 = $_POST['year'];
+$year2 = intval($year1);
+$currentDate = date('Y');
+$age = $currentDate - $year2;
+$section = '';
 $city = $_POST['city'];
 $errorMessages = '';
 
-// write an if statement whether they registered succesfully
-//ok so like install another 'flag boolean' to trgger when true then echo
-//
-
-
 //OK u must fix the html tags in it's spacing
-
-//also fix the birth year thingy form element and wirte an if statement to code it
+    // make table tags in echo lines!!!! 69-76
 
 // lastly fix the CSS for the purple div/body thingy  AS OF Feb 9th 2021
 
@@ -31,16 +30,24 @@ if ($email == '') {
     $errorMessages .= "<p>Error: You must enter an Email Address </p>";
     $isValid = false;
 }
+if ($year2 == '' || !is_numeric($year2)) {
+    $errorMessages .= "<p>Error: You must enter a Birth Year </p>";
+    $isValid = false;
+}
+else if ($age <= 15) {
+    $section .= "Child";    
+}
+else if ( 16 <= $age && $age <= 54 ) {
+    $section .= "Adult";
+}
+else {
+    $section .= "Senior";
+}
 
 if ($city == '-') {
     $errorMessages .= "<p>Error: You must select a City </p>";
     $isValid = false;
 }
-
-// birth year code needed!!!!!!	
-// if and else if then else	
-// so... yea	
-
 
 
 ?>
@@ -57,19 +64,20 @@ if ($city == '-') {
     </div>
 
     <div id="patron">
+        <table>
         <?php
         if ($isValid == true) {
-            echo "<h4>Thank you for registering!</h4>";
-            echo "Name: $firstName";
-            echo "<br />";
-            echo "Email: $email";
-            echo "<br />";
-            echo "City: $city";
-        } else {
-            echo $errorMessages;
-            echo "<p>Go BACK and make corrections</p>";
-        }
-        ?>
+                echo "<tr><th>Thank you for registering!</th></tr>";
+                echo "<tr><td>Name: $firstName $lastName</td></tr>";
+                echo "<tr><td>Email: $email</td></tr>";
+                echo "<tr><td>Section: $section</td></tr>";
+                echo "<tr><td>City: $city</td></tr>";
+                } else {
+                echo $errorMessages;
+                echo "<p>Go BACK and make corrections</p>";
+                }
+            ?>
+        </table>
     </div>
 </body>
 
