@@ -3,7 +3,7 @@ html {
     padding: 0;
 }
 #logo { 
-    position: absolute; 
+    position: relative; 
     top: 0px; 
     left: 0px; 
     width: 800px; 
@@ -13,12 +13,13 @@ body {
 			font-family: Ariel, Helvetica, sans-serif;
 		}
 		
-#patron {
-			width: 780px;
-			padding: 115px 12px 0px;
+#patron {			
+			padding: 15px 12px 0px;
+            margin: 5px;
             background-color: #E6E6FA;
+            min-height: 350px;
 		}
 
 th, td {
-  padding: 15px;
+  padding: 15px 0;
 }
