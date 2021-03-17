@@ -3,17 +3,20 @@ html {
     padding: 0;
 }
 #logo { 
-    position: relative; 
+    position: relative;  
     top: 0px; 
     left: 0px; 
     width: 800px; 
 }
+#title {
+    color: blue;
+}
 body {
-			background-color: #F0E68C;
+			background-color: lightblue;
 			font-family: Ariel, Helvetica, sans-serif;
 		}
 		
-#patron {			
+#patron {
 			padding: 15px 12px 0px;
             margin: 5px;
             background-color: #E6E6FA;
