@@ -2,7 +2,7 @@
 
 <html>
 <head>
-	<title>Assignment 3</title>
+	<title>Assignment 4</title>
     <link rel="stylesheet" href="css/KingLib_3.css">
 
 </head>
@@ -14,19 +14,25 @@
     </div>
 
     <div id="patron">
-        <form method="post" id="myform" action="assignment_3_add_patron.php">
+        <form method="post" id="myform" action="assignment_4_search_books.php">
 
         <p id="title" >Enter Key Word to search for Titles:</p>
-            <P>
-                <input type="text" />
-            </P>
             <p>
-                <input type="submit" id="submit" value="Find Titles">
+                <input name="searchTerm" type="text" />                
+                
+                Sort Order: 
+                <label for="ascendingSort">Ascending</label>
+                <input type="radio" id="ascendingSort" checked name="sortDirection" value="ascending"> 
+
+                <label for="descendingSort">Descending</label>
+                <input type="radio" id="descendingSort" name="sortDirection" value="descending"> 
+            </p>            
+            <p>
+                <input type="submit" value="Find Titles">
             </p>
 
         </form>
 
     </div>
-
     </body>
 </html>
