@@ -1,0 +1,25 @@
+html {
+    margin: 0;
+    padding: 0;
+}
+#logo { 
+    position: relative;  
+    top: 0px; 
+    left: 0px; 
+    width: 800px; 
+}
+body {
+			background-color: #F0E68C;
+			font-family: Ariel, Helvetica, sans-serif;
+		}
+		
+#patron {
+			padding: 15px 12px 0px;
+            margin: 5px;
+            background-color: #E6E6FA;
+            min-height: 350px;
+		}
+
+th, td {
+  padding: 15px 0;
+}
