@@ -1,0 +1,26 @@
+html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+   
+        background: lightgray;
+			font-family: Ariel, Helvetica, sans-serif;
+}
+#loginval {
+    background-color: antiquewhite;
+}
+body {
+    color: blue;
+}		
+#patron {
+			padding: 15px 12px 0px;
+            margin: 5px;
+            background-color: antiquewhite;
+            min-height: 350px;
+		}
+
+th, td {
+  padding: 15px 0;
+}
